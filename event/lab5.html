@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Input Event</title>
+</head>
+<body>
+
+<input type="text" name="nickname">nickname
+<input type="text" name="job">job
+
+<script>
+
+document.querySelectorAll('input').forEach(input => {
+  input.addEventListener('click', Click);
+  input.addEventListener('input', Change);
+});
+function Click(event) {
+  console.log("Attribute name of input:", event.target.getAttribute('name'));
+}
+function Change(event) {
+  console.log("Value typed:", event.target.value);
+}
+</script>
+
+</body>
+</html>

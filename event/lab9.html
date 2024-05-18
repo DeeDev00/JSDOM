@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="phone">Phone Number:</label>
+<input type="text" id="phone" name="phone">
+<button onclick="checkPhoneNumber()">Check</button>
+<div id="message"></div>
+
+<script>
+    
+function checkPhoneNumber() {
+    var phoneNumber = document.getElementById("phone").value;
+    var message = document.getElementById("message");
+
+    if (phoneNumber === "") {
+        message.innerHTML = "Phone Number is required";
+        return;
+    }
+
+    if (!/^\d+$/.test(phoneNumber)) {
+        message.innerHTML = "Phone Number is invalid";
+        return;
+    }
+    if (phoneNumber.length !== 10) {
+        message.innerHTML = "Invalid length";
+        return;
+    }
+    alert("Your number is valid");
+}
+</script>
+
+</body>
+</html>
